@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 code_clone() {
 
         echo "clonning the app"
@@ -36,19 +35,23 @@ if ! code_clone; then
         cd django-notes-app
 fi
 
+
 if ! isntall_requiremnt; then
         echo "installation failed "
         exit 1
 fi
+
 
 if ! required_restart; then
         echo " system fault "
        exit 1
 fi
 
+
 if ! deploy; then
         echo "deployment failed "
         exit 1
 fi
+
 
 echo "****** deploy done **********"
